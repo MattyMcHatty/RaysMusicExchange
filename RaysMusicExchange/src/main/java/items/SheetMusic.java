@@ -4,14 +4,14 @@ import behaviours.ISell;
 import instruments.Instrument;
 
 public class SheetMusic implements ISell {
-    private String name;
+    private String title;
     private int pages;
     private String instrument;
     private double wholesalePrice;
     private double retailPrice;
 
-    public SheetMusic(String name, int pages, String instrument, double wholesalePrice, double retailPrice){
-        this.name = name;
+    public SheetMusic(String title, int pages, String instrument, double wholesalePrice, double retailPrice){
+        this.title = title;
         this.pages = pages;
         this.instrument = instrument;
         this.wholesalePrice = wholesalePrice;
@@ -22,14 +22,6 @@ public class SheetMusic implements ISell {
     @Override
     public double calculateMarkup() {
         return 0;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public int getPages() {
@@ -62,5 +54,13 @@ public class SheetMusic implements ISell {
 
     public void setRetailPrice(double retailPrice) {
         this.retailPrice = retailPrice;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 }

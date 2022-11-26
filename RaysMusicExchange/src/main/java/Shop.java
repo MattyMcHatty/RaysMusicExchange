@@ -1,4 +1,6 @@
 import behaviours.ISell;
+import instruments.DrumKit;
+import items.Pick;
 
 import java.util.ArrayList;
 
@@ -25,5 +27,26 @@ public class Shop {
 
     public void setStock(ArrayList<ISell> stock) {
         this.stock = stock;
+    }
+
+    public void addToStock(ISell item) {
+        this.stock.add(item);
+    }
+
+    public void removeFromStock(ISell item) {
+        for(ISell thing: stock){
+            if(thing == item){
+                stock.remove(thing);
+            }
+
+        }
+    }
+
+    public double calculateTotalPotentialProfit() {
+        double totalProfit = 0;
+        for(ISell thing: stock){
+            totalProfit += thing.calculateMarkup();
+        }
+        return totalProfit;
     }
 }
